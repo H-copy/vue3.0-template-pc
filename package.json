@@ -7,8 +7,10 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "eslint": "eslint ./src",
+    "eslint:fix": "eslint --fix ./src --ext .vue,.js,.ts,.jsx,.tsx",
     "prettier": "prettier --write ./src",
-    "prettier:check": "prettier --check ./src"
+    "prettier:check": "prettier --check ./src",
+    "prepare": "husky install"
   },
   "dependencies": {
     "element-plus": "^2.0.5",
@@ -27,7 +29,9 @@
     "eslint-plugin-jsonc": "^2.2.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.5.0",
+    "husky": "^7.0.4",
     "jsonc-eslint-parser": "^2.1.0",
+    "lint-staged": "^12.3.5",
     "prettier": "^2.5.1",
     "sass": "^1.49.9",
     "scss": "^0.2.4",
@@ -36,5 +40,12 @@
     "unplugin-vue-components": "^0.17.21",
     "vite": "^2.8.0",
     "vue-tsc": "^0.29.8"
+  },
+  "lint-staged": {
+    "src/**/*.{vue,js.ts.jsx.tsx}": [
+      "npm run eslint:fix",
+      "npm run prettier",
+      "git add"
+    ]
   }
 }

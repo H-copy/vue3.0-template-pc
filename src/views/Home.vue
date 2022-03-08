@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed } from "vue";
-
 </script>
 <template>
   <div>
@@ -11,5 +10,4 @@ import { computed } from "vue";
     </ElCard>
   </div>
 </template>
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>
